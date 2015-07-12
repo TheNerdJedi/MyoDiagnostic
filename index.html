@@ -1,0 +1,73 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Myo diagnostics</title>
+	<link type="text/css" rel="stylesheet" href="vendor/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="vendor/css/bootstrap-theme.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<h1>Myo web diagnostics page</h1>
+
+		<!-- status indicators -->
+		<div id="status-float">
+			<div id="connect-status" class="off"></div>
+			<div id="arm-status" class="off"></div>
+			<div id="lock-status"><span class="fa fa-unlock"></span></div>
+		</div>
+
+		<div class="row" id="bluetooth">
+			Bluetooth signal
+			<div class="progress" id="bt-strength">
+			  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+		</div>
+
+		<section id="pose-info" class="row">
+			<div class="col-md-6">
+				<h2>Current pose</h2>
+				<img id="pose" src="ui/img/myo_icon_white.png" height="200" />
+			</div>
+
+			<div class="col-md-6">
+				<h2>Pose history</h2>
+				<textarea 
+id="pose-history" readonly></textarea>
+			</div>
+		</section><!-- #pose-info.row -->
+
+		<section id="imu" class="row">
+			<div id="orientation" class="col-md-4">
+				<h2>Orientation</h2>
+				x: <input type="range" id="o-x" min="-1" max="1" step="0.001" value="0" readonly />
+				y: <input type="range" id="o-y" min="-1" max="1" step="0.001" value="0" readonly />
+				z: <input type="range" id="o-z" min="-1" max="1" step="0.001" value="0" readonly />
+				W: <input type="range" id="o-w" min="-1" max="1" step="0.001" value="0" readonly />
+			</div>
+
+			<div id="gyroscope" class="col-md-4">
+				<h2>Gyro</h2>
+				x: <input type="range" id="g-x" min="-1" max="1" value="0" readonly />
+				y: <input type="range" id="g-y" min="-1" max="1" value="0" readonly />
+				z: <input type="range" id="g-z" min="-1" max="1" value="0" readonly />
+			</div>
+
+			<div id="accelerometer" class="col-md-4">
+				<h2>Accelerometer</h2>
+				x: <input type="range" id="a-x" min="-1" max="1" step="0.001" value="0" readonly />
+				y: <input type="range" id="a-y" min="-1" max="1" step="0.001" value="0" readonly />
+				z: <input type="range" id="a-z" min="-1" max="1" step="0.001" value="0" readonly />
+			</div>
+		</section><!-- #imu.row -->
+	</div><!-- .container -->
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
+	<script src='myo.js'></script>
+	<script src='experimental/myo.experimental.js'></script>
+	<script type="text/javascript" src="js/diagnostics.js"></script>
+
+</body>
+</html>

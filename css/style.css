@@ -1,0 +1,29 @@
+#log{
+	height : 50px;
+	width : 50px;
+	background-color: red;
+}
+
+.off { 
+	background-color: red;
+}
+
+.on {
+	background-color: green;
+}
+
+#status-float {
+	float: right;
+}
+
+#status-float > div {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	font-size: 32px;
+}
+
+#pose-history {
+	width: 100%;
+	height: 200px;
+}
